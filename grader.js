@@ -85,9 +85,6 @@ if(require.main == module) {
 	.option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
 	.option('-u, --url <html_url>', 'URL of file to check', HTMLURL_DEFAULT)
 	.parse(process.argv);
-    console.log(program.checks);
-    console.log(program.file);
-    console.log(program.url);
     if (program.url) {
 	rest.get(program.url).on('complete', downloaded);
     } else {
